@@ -372,7 +372,7 @@ def create_generation_config(request: OpenAIRequest) -> Dict[str, Any]:
                         parameters = parameters.copy()
                         del parameters["$schema"]
                     if parameters is not None:
-                        declaration["parameters"] = parameters
+                        declaration["parameters_json_schema"] = parameters
                     declaration = {k: v for k, v in declaration.items() if v is not None}
                     if declaration.get("name"):
                         function_declarations.append(declaration)
